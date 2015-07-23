@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+     
+      <dl>
+        <dt>Starting station:
+        <dd><select name="start">
+  	{% for x in red %} 
+    		<option value="{{x}}">{{x}}</option>
+  	{% endfor %}
+  	{% for x in green %} 
+  		<option value="{{x}}">{{x}}</option>
+  	{% endfor %}
+  	</select>
+        <dt>Ending station:
+        <dd><select name="stop">
+  	{% for x in red %} 
+    		<option value="{{x}}">{{x}}</option>
+  	{% endfor %}
+  	{% for x in green %} 
+  		<option value="{{x}}">{{x}}</option>
+  	{% endfor %}
+  	</select><br /><br />
+        <dd><input type=submit value=Wait?>
+    </dl>
+  </form>
+{% endblock %}
